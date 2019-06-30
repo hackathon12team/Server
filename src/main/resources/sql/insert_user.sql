@@ -1,0 +1,1 @@
+insert into USERS (password, gender, birthdate) values (?, ?, ?);
