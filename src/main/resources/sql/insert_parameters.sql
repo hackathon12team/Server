@@ -1,0 +1,1 @@
+insert into PARAMETERS (user_id, weight, height, physical_activity, target_weight) values (?, ?, ?, ?, ?);
