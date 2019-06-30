@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
 
-class ResourceExtractor {
+public class ResourceExtractor {
     private static ClassLoader classLoader = ResourceExtractor.class.getClassLoader();
 
     private static HashMap<String, String> alreadyLoaded = new HashMap<>();
 
-    static final String SQL_INSERT_USER = "insert_user.sql";
-    static final String SQL_INSERT_PARAMETERS = "insert_parameters.sql";
+    public static final String SQL_INSERT_USER = "insert_user.sql";
+    public static final String SQL_INSERT_PARAMETERS = "insert_parameters.sql";
 
-    static String getSql(String key) {
+    public static String getSql(String key) {
         if(alreadyLoaded.containsKey(key))
             return alreadyLoaded.get(key);
 
