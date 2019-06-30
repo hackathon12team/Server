@@ -10,7 +10,7 @@ public class User {
     private String email;
     private String password;
     private Gender gender;
-    private Date birthDate;
+    private long birthDate;
 
     public User() {
     }
@@ -55,11 +55,11 @@ public class User {
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+    public long getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(long birthDate) {
         this.birthDate = birthDate;
     }
 }

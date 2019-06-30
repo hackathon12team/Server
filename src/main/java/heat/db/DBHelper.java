@@ -19,7 +19,7 @@ public class DBHelper {
 
             ps.setString(1, user.getPassword());
             ps.setInt(2, user.getGender().index());
-            ps.setDate(3, new Date(user.getBirthDate().getTime()));
+            ps.setDate(3, new Date(user.getBirthDate()));
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class UserSettings {
     private Gender gender;
-    private Date birthDate;
+    private long birthDate;
     private double weight;
     private double height;
     private int physicalActivity;
@@ -21,12 +21,12 @@ public class UserSettings {
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+    public long getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthdate) {
-        this.birthDate = birthdate;
+    public void setBirthDate(long birthDate) {
+        this.birthDate = birthDate;
     }
 
     public double getWeight() {
