@@ -25,7 +25,7 @@ public class UserService {
         user.setPassword(DigestUtils.sha256Hex(password));
         DBHelper.createUser(user);
         UserParameters userParameters = DTOToDBConverter.convertUserParameters(userSettings, user.getUserId());
-        DBHelper.createUserParameters(userParameters);
+        DBHelper.createUserParameters(userParameters, user.getUserId());
         return DBToDTOConverter.convertExtendedUser(user, userParameters, password);
     }
 
