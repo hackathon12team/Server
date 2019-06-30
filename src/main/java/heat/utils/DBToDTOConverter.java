@@ -6,7 +6,7 @@ import heat.dto.ExtendedUser;
 import heat.dto.UserSettings;
 
 public class DBToDTOConverter {
-    public static ExtendedUser convertExtendedUser(User user, UserParameters userParameters, String password) {
+    public static ExtendedUser convertToExtendedUser(User user, UserParameters userParameters, String password) {
         ExtendedUser extendedUser = new ExtendedUser();
         extendedUser.setPassword(password);
         extendedUser.setEmail(user.getEmail());

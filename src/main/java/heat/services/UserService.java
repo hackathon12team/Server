@@ -20,13 +20,13 @@ public class UserService {
     }
 
     public ExtendedUser createUser(UserSettings userSettings) {
-        User user = DTOToDBConverter.convertUser(userSettings);
+        User user = DTOToDBConverter.convertToUser(userSettings);
         String password = generateRandomPassword();
         user.setPassword(DigestUtils.sha256Hex(password));
         DBHelper.createUser(user);
-        UserParameters userParameters = DTOToDBConverter.convertUserParameters(userSettings, user.getUserId());
+        UserParameters userParameters = DTOToDBConverter.convertToUserParameters(userSettings, user.getUserId());
         DBHelper.createUserParameters(userParameters, user.getUserId());
-        return DBToDTOConverter.convertExtendedUser(user, userParameters, password);
+        return DBToDTOConverter.convertToExtendedUser(user, userParameters, password);
     }
 
     private String generateRandomPassword() {
