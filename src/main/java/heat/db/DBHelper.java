@@ -1,20 +1,16 @@
 package heat.db;
 
+import heat.config.DatabaseConfig;
 import heat.utils.ResourceExtractor;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.sql.DataSource;
 import java.sql.*;
 
 public class DBHelper {
 
-    @Autowired
-    private static DataSource dataSource;
-
     public static void createUser(User user) {
         try {
             final String INSERT_USER = ResourceExtractor.getSql(ResourceExtractor.SQL_INSERT_USER);
-            Connection connection = dataSource.getConnection();
+            Connection connection = DatabaseConfig.getDataSource().getConnection();
             PreparedStatement ps = connection.prepareStatement(INSERT_USER);
 
             ps.setString(1, user.getPassword());
@@ -34,7 +30,7 @@ public class DBHelper {
     public static void createUserParameters(UserParameters userParameters, int userId) {
         try {
             final String INSERT_PARAMETERS = ResourceExtractor.getSql(ResourceExtractor.SQL_INSERT_PARAMETERS);
-            Connection connection = dataSource.getConnection();
+            Connection connection = DatabaseConfig.getDataSource().getConnection();
             PreparedStatement ps = connection.prepareStatement(INSERT_PARAMETERS);
 
             ps.setInt(1, userId);
