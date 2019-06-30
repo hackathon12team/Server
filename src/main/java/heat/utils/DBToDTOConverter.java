@@ -11,6 +11,7 @@ public class DBToDTOConverter {
         extendedUser.setPassword(password);
         extendedUser.setEmail(user.getEmail());
         extendedUser.setUsername(user.getUsername());
+        extendedUser.setUserId(user.getUserId());
         UserSettings userSettings = new UserSettings();
         userSettings.setGender(user.getGender());
         userSettings.setBirthDate(user.getBirthDate());

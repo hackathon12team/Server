@@ -1,6 +1,7 @@
 package heat.dto;
 
 public class User {
+    private int userId;
     private String username;
     private String email;
     private UserSettings userSettings;
@@ -30,5 +31,13 @@ public class User {
 
     public void setUserSettings(UserSettings userSettings) {
         this.userSettings = userSettings;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

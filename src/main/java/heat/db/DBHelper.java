@@ -11,7 +11,7 @@ public class DBHelper {
         try {
             final String INSERT_USER = ResourceExtractor.getSql(ResourceExtractor.SQL_INSERT_USER);
             Connection connection = DatabaseConfig.getDataSource().getConnection();
-            PreparedStatement ps = connection.prepareStatement(INSERT_USER);
+            PreparedStatement ps = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, user.getPassword());
             ps.setInt(2, user.getGender().index());
@@ -19,7 +19,9 @@ public class DBHelper {
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
-            user.setUserId(rs.getInt("user_id"));
+            if (rs.next()) {
+                user.setUserId(rs.getInt(1));
+            }
             rs.close();
             ps.close();
         } catch (SQLException e) {
