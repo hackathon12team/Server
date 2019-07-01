@@ -1,9 +1,10 @@
 package heat.dto;
 
-public class ExtendedUser extends User {
+public class ExtendedUserDto extends UserDto {
+
     private String password;
 
-    public ExtendedUser() {
+    public ExtendedUserDto() {
     }
 
     public String getPassword() {

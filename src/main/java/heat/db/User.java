@@ -2,9 +2,8 @@ package heat.db;
 
 import heat.dto.Gender;
 
-import java.util.Date;
-
 public class User {
+
     private int userId;
     private String username;
     private String email;

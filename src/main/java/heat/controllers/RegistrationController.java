@@ -1,7 +1,7 @@
 package heat.controllers;
 
-import heat.dto.ExtendedUser;
-import heat.dto.UserSettings;
+import heat.dto.ExtendedUserDto;
+import heat.dto.UserSettingsDto;
 import heat.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class RegistrationController {
+
     private final UserService userService;
 
     @Autowired
@@ -21,8 +22,8 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    ExtendedUser register(HttpServletRequest request,
-                          @RequestBody UserSettings userSettings) {
+    ExtendedUserDto register(HttpServletRequest request,
+                             @RequestBody UserSettingsDto userSettings) {
         return userService.createUser(userSettings);
     }
 }

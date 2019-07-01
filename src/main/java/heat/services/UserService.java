@@ -3,8 +3,8 @@ package heat.services;
 import heat.db.DBHelper;
 import heat.db.User;
 import heat.db.UserParameters;
-import heat.dto.ExtendedUser;
-import heat.dto.UserSettings;
+import heat.dto.ExtendedUserDto;
+import heat.dto.UserSettingsDto;
 import heat.utils.DBToDTOConverter;
 import heat.utils.DTOToDBConverter;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -19,7 +19,7 @@ public class UserService {
     public UserService() {
     }
 
-    public ExtendedUser createUser(UserSettings userSettings) {
+    public ExtendedUserDto createUser(UserSettingsDto userSettings) {
         User user = DTOToDBConverter.convertToUser(userSettings);
         String password = generateRandomPassword();
         user.setPassword(DigestUtils.sha256Hex(password));

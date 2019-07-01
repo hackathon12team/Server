@@ -1,8 +1,7 @@
 package heat.dto;
 
-import java.util.Date;
+public class UserSettingsDto {
 
-public class UserSettings {
     private Gender gender;
     private long birthDate;
     private double weight;
@@ -10,7 +9,7 @@ public class UserSettings {
     private int physicalActivity;
     private double targetWeight;
 
-    public UserSettings() {
+    public UserSettingsDto() {
     }
 
     public Gender getGender() {

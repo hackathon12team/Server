@@ -1,6 +1,7 @@
 package heat.db;
 
 public class UserParameters {
+
     private int parameterId;
     private int userId;
     private double weight;
