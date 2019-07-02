@@ -4,7 +4,7 @@
 You can get access to heat backend by url: [https://heat-backend.herokuapp.com](https://heat-backend.herokuapp.com/).
 
 ## Methods
-- */registration*
+- */registration POST*
 
 Allows you to register a new user.
 
