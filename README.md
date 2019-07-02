@@ -34,6 +34,6 @@ Allows you to register a new user.
     "physicalActivity": 1.4,
     "targetWeight": 52
   },
-  "password": "��:{X�R�L�u`:�|�"
+  "password": "zRgMRXkwnSkkCZvvrY7O"
 }
 ```
