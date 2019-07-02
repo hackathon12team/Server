@@ -38,7 +38,7 @@ public class DBHelper {
             ps.setInt(1, userId);
             ps.setDouble(2, userParameters.getWeight());
             ps.setDouble(3, userParameters.getHeight());
-            ps.setInt(4, userParameters.getPhysicalActivity());
+            ps.setDouble(4, userParameters.getPhysicalActivity());
             ps.setDouble(5, userParameters.getTargetWeight());
 
             ps.executeUpdate();

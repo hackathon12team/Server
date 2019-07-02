@@ -6,7 +6,7 @@ public class UserParameters {
     private int userId;
     private double weight;
     private double height;
-    private int physicalActivity;
+    private double physicalActivity;
     private double targetWeight;
 
     public UserParameters() {
@@ -44,11 +44,11 @@ public class UserParameters {
         this.height = height;
     }
 
-    public int getPhysicalActivity() {
+    public double getPhysicalActivity() {
         return physicalActivity;
     }
 
-    public void setPhysicalActivity(int physicalActivity) {
+    public void setPhysicalActivity(double physicalActivity) {
         this.physicalActivity = physicalActivity;
     }
 
